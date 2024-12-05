@@ -12,5 +12,8 @@ COPY script.js .
 # Expose the port that Nginx will use
 EXPOSE 8081
 
+# Update the Nginx configuration to listen on port 8081
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
